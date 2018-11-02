@@ -19,8 +19,6 @@ jobs:
           name: Install dependencies
           command: |
             npm install
-            unset AWS_ACCESS_KEY_ID
-            unset AWS_SECRET_ACCESS_KEY
 
       # run tests
       - run: 
