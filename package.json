@@ -1,5 +1,5 @@
 {
-  "name": "rougelike",
+  "name": "spencerb.org",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -24,7 +24,7 @@
     "css-loader": "^0.28.11",
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^3.2.0",
-    "imagemin": "^6.0.0",
+    "imagemin": "^5.0.0",
     "img-loader": "^3.0.0",
     "node-sass": "^4.9.0",
     "prerender-loader": "^1.0.0",
