@@ -5,9 +5,3 @@ describe("First Test!", () => {
     expect(Boolean("Love")).toBe(true);
   });
 });
-
-describe("Second Test!", () => {
-  it ("should fail beautifully!", () => {
-    expect(false).toBe(true);
-  });
-});

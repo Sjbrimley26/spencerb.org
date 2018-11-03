@@ -83,7 +83,7 @@ module.exports = {
         secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
       },
       s3UploadOptions: {
-        Bucket: 'spencerb.org'
+        Bucket: 'www.spencerb.org'
       }
     })
   ],
