@@ -1,24 +1,13 @@
-/* jshint esversion:6 */
-
 import "babel-polyfill";
+import "./assets/styles/global.scss";
 
-const d3 = require("d3");
-const sample = require("lodash/sample");
+import Vue from "vue";
+import App from "./App.vue";
 
-window.addEventListener("load", () => {
-  
-  const colors = [
-    ["rgb(0, 0, 0)", "rgb(255, 255, 255)"],
-    ["rgb(255, 255, 255)", "rgb(0, 0, 0)"],
-    ["rgb(50, 50, 50)", "rgb(255, 255, 255)"],
-    ["rgb(255, 255, 255)", "rgb(0, 0, 70)"]
-  ];
-  
-  const $title = d3.select("#title");
-
-  setInterval(() => {
-    const [ bg, font ] = sample(colors);
-    $title.style("background", bg).style("color", font);
-  }, 3000);
-
+const app = new Vue({
+  el: "#app",
+  components: {
+    App
+  },
+  template: "<App/>"
 });
