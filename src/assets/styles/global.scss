@@ -6,16 +6,18 @@ body, html {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 3000px;
+  height: 5000px;
   contain: content;
 }
 
 @font-face {
   src: url('https://fonts.gstatic.com/s/satisfy/v8/rP2Hp2yn6lkG50LoCZOIHQ.woff2');
   font-family: "Satisfy";
+  font-display: swap;
 }
 
 @font-face {
   src: url('https://fonts.gstatic.com/s/neuton/v10/UMBTrPtMoH62xUZCwYg6Qis.woff2');
   font-family: "Neuton";
+  font-display: swap;
 }

@@ -69,14 +69,12 @@
         Have a good day!
       </p>
     </about-block>
-    <div id="projects" v-if="visibleBlocks.projectBlock">
-      Projects
-    </div>
+    <project-block id="projects" v-if="visibleBlocks.projectBlock" />
   </div>
 </template>
 
 <script>
-import { PortraitBlock, AboutBlock } from "./assets/components";
+import { PortraitBlock, AboutBlock, ProjectBlock } from "./assets/components";
 import { isBetween } from "./utils";
 import debounce from "lodash/debounce";
 
@@ -85,7 +83,8 @@ export default {
 
   components: {
     PortraitBlock,
-    AboutBlock
+    AboutBlock,
+    ProjectBlock
   },
 
   data() {
@@ -151,7 +150,7 @@ export default {
         if (projects) {
           projects.scrollIntoView(behavior);
         } else {
-          this.scrollTo(2000);
+          this.scrollTo(2300);
         }
       } else {
         return window.scroll({
@@ -166,6 +165,9 @@ export default {
 
   created() {
     window.addEventListener("scroll", this.onScroll);
+    window.onbeforeunload = function () {
+      window.scrollTo(0, 0);
+    };
   },
 
   destroyed() {
