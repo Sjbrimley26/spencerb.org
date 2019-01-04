@@ -7,6 +7,10 @@ import fairRentalsPic from "./projects/fair_rentals.jpg";
 import uploaderPic from "./projects/docker_uploader.jpg";
 import rougelikePic from "./projects/rougelike.jpg";
 
+import linkedinIcon from "./icons/linkedin.png";
+import githubIcon from "./icons/github.png";
+import facebookIcon from "./icons/facebook.png";
+
 export {
   elvisPic,
   couplePic,
@@ -14,5 +18,8 @@ export {
   pinterestPic,
   fairRentalsPic,
   uploaderPic,
-  rougelikePic
+  rougelikePic,
+  linkedinIcon,
+  githubIcon,
+  facebookIcon
 };

@@ -113,7 +113,7 @@ export default {
     flex-direction: column;
 
     .scrollbar {
-      height: 20px;
+      height: 22px;
       position: absolute;
       width: 275px;
       margin: auto;
@@ -121,18 +121,20 @@ export default {
       border-radius: 10px;
       display: flex;
       justify-content: space-around;
-      background: rgba(230, 240, 245, 0.5);
+      background: lightslategray;
+      border: 1px solid;
 
       div {
         height: 20px;
         width: 20px;
-        background: rgb(220, 220, 255);
+        background: white;
         border-radius: 50%;
         cursor: pointer;
+        transition: all 0.2s;
       }
 
       .selected {
-        background: rgb(100, 110, 130);
+        border: 4px solid darkgray;
       }
     }
 
@@ -158,7 +160,7 @@ export default {
   .description {
     padding: 0 20px;
     font-family: "Neuton", Arial;
-    font-size: calc(0.6em + 100vw / 110);
+    font-size: calc(0.55em + 100vw / 110);
     display: flex;
     align-items: center;
 

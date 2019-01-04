@@ -6,8 +6,12 @@ body, html {
   padding: 0;
   margin: 0;
   width: 100%;
-  height: 5000px;
+  height: 4200px;
   contain: content;
+}
+
+.noScroll {
+  overflow: hidden;
 }
 
 @font-face {

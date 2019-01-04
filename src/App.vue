@@ -7,7 +7,7 @@
     <div class="links">
       <a v-on:click="scrollTo(370)">About</a>
       <a  v-on:click="scrollTo('projects')">Projects</a>
-      <a>Contact</a>
+      <a v-on:click="toggleMenu">Contact</a>
     </div>
     <about-block v-if="visibleBlocks.blockOne" v-bind:even="false">
       <p>
@@ -70,11 +70,31 @@
       </p>
     </about-block>
     <project-block id="projects" v-if="visibleBlocks.projectBlock" />
+    <contact-block id="contacts" v-if="visibleBlocks.contactBlock" v-bind:closeMenu="toggleMenu" />
+    <div class="externalLinks" v-bind:style="{ top: contactTop + 'px' }">
+      <a href="https://linkedin.com/in/spencer-brimley-026673154/" target="_blank">
+        <img v-bind:src="linkedinIcon">
+      </a>
+      <a href="https://github.com/Sjbrimley26" target="_blank">
+        <img v-bind:src="githubIcon">
+      </a>
+      <a href="https://www.facebook.com/spencer.brimley" target="_blank">
+        <img v-bind:src="facebookIcon">
+      </a>
+    </div>
   </div>
 </template>
 
 <script>
-import { PortraitBlock, AboutBlock, ProjectBlock } from "./assets/components";
+import { facebookIcon, linkedinIcon, githubIcon } from "./assets/images";
+
+import {
+  PortraitBlock,
+  AboutBlock,
+  ProjectBlock,
+  ContactBlock
+} from "./assets/components";
+
 import { isBetween } from "./utils";
 import debounce from "lodash/debounce";
 
@@ -84,24 +104,36 @@ export default {
   components: {
     PortraitBlock,
     AboutBlock,
-    ProjectBlock
+    ProjectBlock,
+    ContactBlock
   },
 
   data() {
     return {
+      bodyRef: document.getElementsByTagName("body")[0],
+
       visibleBlocks: {
         blockOne: false,
         blockTwo: false,
         blockThree: false,
         blockFour: false,
         blockFive: false,
-        projectBlock: false
-      }
+        projectBlock: false,
+        contactBlock: false
+      },
+
+      facebookIcon: facebookIcon,
+      linkedinIcon: linkedinIcon,
+      githubIcon: githubIcon,
+
+      contactTop: window.innerHeight - 120
     };
   },
 
   methods: {
     onScroll() {
+      this.contactTop = window.scrollY + (window.innerHeight - 120);
+
       const windowInRange = isBetween(window.scrollY);
 
       const { visibleBlocks } = this;
@@ -159,6 +191,11 @@ export default {
           ...behavior
         });
       }
+    },
+
+    toggleMenu() {
+      this.visibleBlocks.contactBlock = !this.visibleBlocks.contactBlock;
+      this.bodyRef.classList.toggle("noScroll");
     }
 
   },
@@ -244,6 +281,21 @@ export default {
 
     @media(min-width: 700px) {
       font-size: 1.1em;
+    }
+  }
+
+  .externalLinks {
+    width: 290px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 70px;
+    position: absolute;
+    left: calc(50% - 145px);
+
+    a img {
+      height: 64px;
+      width: 64px;
     }
   }
 
