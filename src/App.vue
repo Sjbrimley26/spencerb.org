@@ -72,14 +72,14 @@
     <project-block id="projects" v-if="visibleBlocks.projectBlock" />
     <contact-block id="contacts" v-if="visibleBlocks.contactBlock" v-bind:closeMenu="toggleMenu" />
     <div class="externalLinks" v-bind:style="{ top: contactTop + 'px' }">
-      <a href="https://linkedin.com/in/spencer-brimley-026673154/" target="_blank">
-        <img v-bind:src="linkedinIcon">
+      <a href="https://linkedin.com/in/spencer-brimley-026673154/" target="_blank" rel="noopener">
+        <img v-bind:src="linkedinIcon" alt="LinkedIn">
       </a>
-      <a href="https://github.com/Sjbrimley26" target="_blank">
-        <img v-bind:src="githubIcon">
+      <a href="https://github.com/Sjbrimley26" target="_blank" rel="noopener">
+        <img v-bind:src="githubIcon" alt="Github">
       </a>
-      <a href="https://www.facebook.com/spencer.brimley" target="_blank">
-        <img v-bind:src="facebookIcon">
+      <a href="https://www.facebook.com/spencer.brimley" target="_blank" rel="noopener">
+        <img v-bind:src="facebookIcon" alt="Facebook">
       </a>
     </div>
   </div>
